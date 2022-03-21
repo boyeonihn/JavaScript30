@@ -84,9 +84,9 @@
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
-    let anchorTags = document.querySelectorAll(".mw-category li > a");
-    let text = [];
-    for (let anchor of anchorTags) {
+    let anchorTags = document.querySelectorAll(".mw-category li > a");        // first set a variable that accesses the DOM 
+    let text = [];                                                            // create an array that is going to store the street names with 'de' in the name 
+    for (let anchor of anchorTags) {                                          // create a for loop that goes through the elements within the anchorTags and access their textContent
         text.push(anchor.textContent); 
     }
 
@@ -104,26 +104,18 @@
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-    let dictionary = {};
+    
+    let countedTransportation = data.reduce(function (allTransport, vehicle) {
+      if (vehicle in allTransport) {
+        allTransport[vehicle]++
+      }
+      else {
+        allTransport[vehicle] = 1
+      }
+      return allTransport
+    }, {})
 
-    let what = data.reduce(function (a,b) {
-         if (dictionary.hasOwnProperty(a) == false) {
-             dictionary[a] = 0; 
-         } else if (dictionary.hasOwnProperty(b) == false) {
-             dictionary[b] = 0; 
-         }
-         if (a == b) {
-             dictionary[a] += 1; 
-         } else {
-             dictionary[b] += 1;
-         }
-    });
-
-    console.log(dictionary); 
-
-
-
-
+    console.log(countedTransportation)
 
   </script>
 </body>
