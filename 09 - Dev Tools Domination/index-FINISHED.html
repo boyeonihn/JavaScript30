@@ -21,16 +21,17 @@
     console.log('hello');
 
     // Interpolated
-    console.log('Hello I am a %s string!', '💩');
+    console.log('Hello I am a %s string!', '💩');  // you can use ES6 backticks now 
 
     // Styled
-    // console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue')
+    console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue') 
+    // put %c in front and you can style things on the console 
 
     // warning!
-    console.warn('OH NOOO');
+    console.warn('OH NOOO'); // warning in the console. 
 
     // Error :|
-    console.error('Shit!');
+    console.error('Shit!'); // display error in the console 
 
     // Info
     console.info('Crocodiles eat 3-4 people per year');
@@ -38,14 +39,14 @@
     // Testing
     const p = document.querySelector('p');
 
-    console.assert(p.classList.contains('ouch'), 'That is wrong!');
+    console.assert(p.classList.contains('ouch'), 'That is wrong!');  // only fire if something is wrong 
 
     // clearing
     console.clear();
 
     // Viewing DOM Elements
-    console.log(p);
-    console.dir(p);
+    console.log(p); // shows you just the element itself 
+    console.dir(p); // allow you to open up the element info properties 
 
     console.clear();
 
@@ -55,7 +56,7 @@
       console.log(`This is ${dog.name}`);
       console.log(`${dog.name} is ${dog.age} years old`);
       console.log(`${dog.name} is ${dog.age * 7} dog years old`);
-      console.groupEnd(`${dog.name}`);
+      console.groupEnd(`${dog.name}`); // pass the same string that you used to define the group 
     });
 
     // counting
